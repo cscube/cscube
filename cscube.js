@@ -80,10 +80,10 @@ var cube = {              U1:"B1",U2:"B2",
         var oldF2 = cube.F2;
         cube.F1 = cube.R1;
         cube.F2 = cube.R2;
-        cube.R1 = cube.B1;
-        cube.R2 = cube.B2;
-        cube.B1 = cube.L1;
-        cube.B2 = cube.L2;
+        cube.R1 = cube.B4;
+        cube.R2 = cube.B3;
+        cube.B4 = cube.L1;
+        cube.B3 = cube.L2;
         cube.L1 = oldF1;
         cube.L2 = oldF2;
         var oldU1 = cube.U1;
@@ -97,10 +97,10 @@ var cube = {              U1:"B1",U2:"B2",
           var oldF2 = cube.F2;
           cube.F1 = cube.L1;
           cube.F2 = cube.L2;
-          cube.L1 = cube.B1;
-          cube.L2 = cube.B2;
-          cube.B1 = cube.R1;
-          cube.B2 = cube.R2;
+          cube.L1 = cube.B4;
+          cube.L2 = cube.B3;
+          cube.B4 = cube.R1;
+          cube.B3 = cube.R2;
           cube.R1 = oldF1;
           cube.R2 = oldF2;
           var oldU1 = cube.U1;
@@ -114,7 +114,13 @@ var cube = {              U1:"B1",U2:"B2",
             T();
             RP();
             TP();
-          }                                                                    
+          }
+          function LPTPLT() {
+            LP();
+            TP();
+            L();
+            T();
+          }                                                                                
   function drawCube() {
     document.getElementById("U1").innerHTML ="<div id=" + cube.U1 +"C>" + cube.U1 + "</div>";
     document.getElementById("U2").innerHTML ="<div id=" + cube.U2 +"C>" + cube.U2 + "</div>";
