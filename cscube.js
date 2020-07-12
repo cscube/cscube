@@ -120,6 +120,16 @@ var cube = {              U1:"B1",U2:"B2",
             TP();
             L();
             T();
+          }
+          function TRTPLPTRPTPLP(){
+            T();
+            R();
+            TP();
+            LP();
+            T();
+            RP();
+            TP()
+            L();
           }                                                                                
   function drawCube() {
     document.getElementById("U1").innerHTML ="<div id=" + cube.U1 +"C>" + cube.U1 + "</div>";
