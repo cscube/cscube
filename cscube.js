@@ -7,7 +7,7 @@ var cube = {              U1:"B1",U2:"B2",
             B1:"Y1",B2:"Y2",
             B3:"Y3",B4:"Y4"
         };
-  function drawCubeR() {
+  function R() {
             var oldF2 = cube.F2;
             var oldF4 = cube.F4;
             cube.F2 = cube.D2;
@@ -23,9 +23,8 @@ var cube = {              U1:"B1",U2:"B2",
             cube.R3 = cube.R4;
             cube.R4 = cube.R2;
             cube.R2 = oldR1;
-            drawCube();
             }
-  function drawCubeRP() {
+  function RP() {
             var oldF2 = cube.F2;
             var oldF4 = cube.F4;
             cube.F2 = cube.U2;
@@ -41,9 +40,8 @@ var cube = {              U1:"B1",U2:"B2",
             cube.R2 = cube.R4;
             cube.R4 = cube.R3;
             cube.R3 = oldR1;
-            drawCube();
             }
-    function drawCubeL() {
+    function L() {
         var oldF1 = cube.F1;
         var oldF3 = cube.F3;
         cube.F1 = cube.U1;
@@ -59,15 +57,14 @@ var cube = {              U1:"B1",U2:"B2",
         cube.L3 = cube.L4;
         cube.L4 = cube.L2;
         cube.L2 = oldL1;
-        drawCube();
         }
-    function drawCubeLP() {
+    function LP() {
         var oldF1 = cube.F1;
         var oldF3 = cube.F3;
-        cube.F1 = cube.B1;
-        cube.F3 = cube.B3;
-        cube.B1 = cube.B1;
-        cube.B3 = cube.B3;
+        cube.F1 = cube.D1;
+        cube.F3 = cube.D3;
+        cube.D1 = cube.B1;
+        cube.D3 = cube.B3;
         cube.B1 = cube.U1;
         cube.B3 = cube.U3;
         cube.U1 = oldF1;
@@ -77,11 +74,50 @@ var cube = {              U1:"B1",U2:"B2",
         cube.L2 = cube.L4;
         cube.L4 = cube.L3;
         cube.L3 = oldL1;
-        drawCube();
-        }                                                   
+        }
+      function T() {
+        var oldF1 = cube.F1;
+        var oldF2 = cube.F2;
+        cube.F1 = cube.R1;
+        cube.F2 = cube.R2;
+        cube.R1 = cube.B1;
+        cube.R2 = cube.B2;
+        cube.B1 = cube.L1;
+        cube.B2 = cube.L2;
+        cube.L1 = oldF1;
+        cube.L2 = oldF2;
+        var oldU1 = cube.U1;
+        cube.U1 = cube.U3;
+        cube.U3 = cube.U4;
+        cube.U4 = cube.U2;
+        cube.U2 = oldU1;
+        }
+        function TP() {
+          var oldF1 = cube.F1;
+          var oldF2 = cube.F2;
+          cube.F1 = cube.L1;
+          cube.F2 = cube.L2;
+          cube.L1 = cube.B1;
+          cube.L2 = cube.B2;
+          cube.B1 = cube.R1;
+          cube.B2 = cube.R2;
+          cube.R1 = oldF1;
+          cube.R2 = oldF2;
+          var oldU1 = cube.U1;
+          cube.U1 = cube.U2;
+          cube.U2 = cube.U4;
+          cube.U4 = cube.U3;
+          cube.U3 = oldU1;
+          } 
+          function RTRPTP() {
+            R();
+            T();
+            RP();
+            TP();
+          }                                                                    
   function drawCube() {
-    document.getElementById("U1").innerHTML = "<div id=" + cube.U1 +"C>" + cube.U1 + "</div>";
-    document.getElementById("U2").innerHTML ="<div id=" + cube.U2 +"C>" + cubez.U2 + "</div>";
+    document.getElementById("U1").innerHTML ="<div id=" + cube.U1 +"C>" + cube.U1 + "</div>";
+    document.getElementById("U2").innerHTML ="<div id=" + cube.U2 +"C>" + cube.U2 + "</div>";
     document.getElementById("U3").innerHTML ="<div id=" + cube.U3 +"C>" + cube.U3 + "</div>";
     document.getElementById("U4").innerHTML ="<div id=" + cube.U4 +"C>" + cube.U4 + "</div>";
     document.getElementById("L1").innerHTML ="<div id=" + cube.L1 +"C>" + cube.L1 + "</div>";
