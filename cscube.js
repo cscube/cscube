@@ -75,7 +75,7 @@ var cube = {              U1:"B1",U2:"B2",
         cube.L4 = cube.L3;
         cube.L3 = oldL1;
         }
-      function T() {
+      function U() {
         var oldF1 = cube.F1;
         var oldF2 = cube.F2;
         cube.F1 = cube.R1;
@@ -92,7 +92,7 @@ var cube = {              U1:"B1",U2:"B2",
         cube.U4 = cube.U2;
         cube.U2 = oldU1;
         }
-        function TP() {
+        function UP() {
           var oldF1 = cube.F1;
           var oldF2 = cube.F2;
           cube.F1 = cube.L1;
@@ -109,26 +109,26 @@ var cube = {              U1:"B1",U2:"B2",
           cube.U4 = cube.U3;
           cube.U3 = oldU1;
           } 
-          function RTRPTP() {
+          function RURPUP() {
             R();
-            T();
+            U();
             RP();
-            TP();
+            UP();
           }
-          function LPTPLT() {
+          function LPUPLU() {
             LP();
-            TP();
+            UP();
             L();
-            T();
+            U();
           }
-          function TRTPLPTRPTPLP(){
-            T();
+          function URUPLPURPUPLP(){
+            U();
             R();
-            TP();
+            UP();
             LP();
-            T();
+            U();
             RP();
-            TP()
+            UP()
             L();
           }                                                                                
   function drawCube() {
