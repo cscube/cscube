@@ -108,7 +108,41 @@ var cube = {              U1:"B1",U2:"B2",
           cube.U2 = cube.U4;
           cube.U4 = cube.U3;
           cube.U3 = oldU1;
-          } 
+          }
+        function D() {
+          var oldF3 = cube.F3;
+          var oldF4 = cube.F4;
+          cube.F3 = cube.L3;
+          cube.F4 = cube.L4;
+          cube.L3 = cube.B2;
+          cube.L4 = cube.B1;
+          cube.B2 = cube.R3;
+          cube.B1 = cube.R4;
+          cube.R3 = oldF3;
+          cube.R4 = oldF4;
+          var oldD1 = cube.D1;
+          cube.D1 = cube.D3;
+          cube.D3 = cube.D4;
+          cube.D4 = cube.D2;
+          cube.D2 = oldD1;
+          }
+        function DP() {
+          var oldF3 = cube.F3;
+          var oldF4 = cube.F4;
+          cube.F3 = cube.R3;
+          cube.F4 = cube.R4;
+          cube.R3 = cube.B2;
+          cube.R4 = cube.B1;
+          cube.B2 = cube.L3;
+          cube.B1 = cube.L4;
+          cube.L3 = oldF3;
+          cube.L4 = oldF4;
+          var oldD1 = cube.D1;
+          cube.D1 = cube.D2;
+          cube.D2 = cube.D4;
+          cube.D4 = cube.D3;
+          cube.D3 = oldD1;
+          }            
           function RURPUP() {
             R();
             U();
@@ -130,6 +164,17 @@ var cube = {              U1:"B1",U2:"B2",
             RP();
             UP()
             L();
+          }
+          function resetCube(){
+            cube = {              U1:"B1",U2:"B2",
+                          U3:"B3",U4:"B4",
+            L1:"O1",L2:"O2",F1:"W1",F2:"W2",R1:"R1",R2:"R2",
+            L3:"O3",L4:"O4",F3:"W3",F4:"W4",R3:"R3",R4:"R4",
+                          D1:"G1",D2:"G2",
+                          D3:"G3",D4:"G4",
+            B1:"Y1",B2:"Y2",
+            B3:"Y3",B4:"Y4"
+        };
           }                                                                                
   function drawCube() {
     document.getElementById("U1").innerHTML ="<div id=" + cube.U1 +"C>" + cube.U1 + "</div>";
