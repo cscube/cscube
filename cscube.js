@@ -7,6 +7,7 @@ var cube = {              U1:"B1",U2:"B2",
             B1:"Y1",B2:"Y2",
             B3:"Y3",B4:"Y4"
         };
+var moveStack=new Array();      
   function R() {
             let oldF2 = cube.F2;
             let oldF4 = cube.F4;
@@ -23,6 +24,7 @@ var cube = {              U1:"B1",U2:"B2",
             cube.R3 = cube.R4;
             cube.R4 = cube.R2;
             cube.R2 = oldR1;
+            moveStack.push("R");
             }
   function RP() {
             let oldF2 = cube.F2;
@@ -40,6 +42,7 @@ var cube = {              U1:"B1",U2:"B2",
             cube.R2 = cube.R4;
             cube.R4 = cube.R3;
             cube.R3 = oldR1;
+            moveStack.push("RP");
             }
     function L() {
         let oldF1 = cube.F1;
@@ -57,6 +60,7 @@ var cube = {              U1:"B1",U2:"B2",
         cube.L3 = cube.L4;
         cube.L4 = cube.L2;
         cube.L2 = oldL1;
+        moveStack.push("L");
         }
     function LP() {
         let oldF1 = cube.F1;
@@ -74,6 +78,7 @@ var cube = {              U1:"B1",U2:"B2",
         cube.L2 = cube.L4;
         cube.L4 = cube.L3;
         cube.L3 = oldL1;
+        moveStack.push("LP");
         }
       function U() {
         let oldF1 = cube.F1;
@@ -91,6 +96,7 @@ var cube = {              U1:"B1",U2:"B2",
         cube.U3 = cube.U4;
         cube.U4 = cube.U2;
         cube.U2 = oldU1;
+        moveStack.push("U");
         }
         function UP() {
           let oldF1 = cube.F1;
@@ -108,6 +114,7 @@ var cube = {              U1:"B1",U2:"B2",
           cube.U2 = cube.U4;
           cube.U4 = cube.U3;
           cube.U3 = oldU1;
+          moveStack.push("UP");
           }
         function D() {
           let oldF3 = cube.F3;
@@ -125,6 +132,7 @@ var cube = {              U1:"B1",U2:"B2",
           cube.D3 = cube.D4;
           cube.D4 = cube.D2;
           cube.D2 = oldD1;
+          moveStack.push("D");
           }
         function DP() {
           let oldF3 = cube.F3;
@@ -142,6 +150,7 @@ var cube = {              U1:"B1",U2:"B2",
           cube.D2 = cube.D4;
           cube.D4 = cube.D3;
           cube.D3 = oldD1;
+          moveStack.push("DP");
           }
           function roUp() {
             R();
@@ -218,5 +227,6 @@ var cube = {              U1:"B1",U2:"B2",
     document.getElementById("D2").innerHTML ="<div id=" + cube.D2 +"C>" + cube.D2 + "</div>";
     document.getElementById("D3").innerHTML ="<div id=" + cube.D3 +"C>" + cube.D3 + "</div>";
     document.getElementById("D4").innerHTML ="<div id=" + cube.D4 +"C>" + cube.D4 + "</div>";
+    document.getElementById("moveStack").innerHTML ="MoveList:"+ moveStack.toString() + ".";
   }
  
