@@ -8,8 +8,8 @@ var cube = {              U1:"B1",U2:"B2",
             B3:"Y3",B4:"Y4"
         };
   function R() {
-            var oldF2 = cube.F2;
-            var oldF4 = cube.F4;
+            let oldF2 = cube.F2;
+            let oldF4 = cube.F4;
             cube.F2 = cube.D2;
             cube.F4 = cube.D4;
             cube.D2 = cube.B2;
@@ -18,15 +18,15 @@ var cube = {              U1:"B1",U2:"B2",
             cube.B4 = cube.U4;
             cube.U2 = oldF2;
             cube.U4 = oldF4;
-            var oldR1 = cube.R1;
+            let oldR1 = cube.R1;
             cube.R1 = cube.R3;
             cube.R3 = cube.R4;
             cube.R4 = cube.R2;
             cube.R2 = oldR1;
             }
   function RP() {
-            var oldF2 = cube.F2;
-            var oldF4 = cube.F4;
+            let oldF2 = cube.F2;
+            let oldF4 = cube.F4;
             cube.F2 = cube.U2;
             cube.F4 = cube.U4;
             cube.U2 = cube.B2;
@@ -35,15 +35,15 @@ var cube = {              U1:"B1",U2:"B2",
             cube.B4 = cube.D4;
             cube.D2 = oldF2;
             cube.D4 = oldF4;            
-            var oldR1 = cube.R1;
+            let oldR1 = cube.R1;
             cube.R1 = cube.R2;
             cube.R2 = cube.R4;
             cube.R4 = cube.R3;
             cube.R3 = oldR1;
             }
     function L() {
-        var oldF1 = cube.F1;
-        var oldF3 = cube.F3;
+        let oldF1 = cube.F1;
+        let oldF3 = cube.F3;
         cube.F1 = cube.U1;
         cube.F3 = cube.U3;
         cube.U1 = cube.B1;
@@ -52,15 +52,15 @@ var cube = {              U1:"B1",U2:"B2",
         cube.B3 = cube.D3;
         cube.D1 = oldF1;
         cube.D3 = oldF3;
-        var oldL1 = cube.L1;
+        let oldL1 = cube.L1;
         cube.L1 = cube.L3;
         cube.L3 = cube.L4;
         cube.L4 = cube.L2;
         cube.L2 = oldL1;
         }
     function LP() {
-        var oldF1 = cube.F1;
-        var oldF3 = cube.F3;
+        let oldF1 = cube.F1;
+        let oldF3 = cube.F3;
         cube.F1 = cube.D1;
         cube.F3 = cube.D3;
         cube.D1 = cube.B1;
@@ -69,15 +69,15 @@ var cube = {              U1:"B1",U2:"B2",
         cube.B3 = cube.U3;
         cube.U1 = oldF1;
         cube.U3 = oldF3;
-        var oldL1 = cube.L1;
+        let oldL1 = cube.L1;
         cube.L1 = cube.L2;
         cube.L2 = cube.L4;
         cube.L4 = cube.L3;
         cube.L3 = oldL1;
         }
       function U() {
-        var oldF1 = cube.F1;
-        var oldF2 = cube.F2;
+        let oldF1 = cube.F1;
+        let oldF2 = cube.F2;
         cube.F1 = cube.R1;
         cube.F2 = cube.R2;
         cube.R1 = cube.B4;
@@ -86,15 +86,15 @@ var cube = {              U1:"B1",U2:"B2",
         cube.B3 = cube.L2;
         cube.L1 = oldF1;
         cube.L2 = oldF2;
-        var oldU1 = cube.U1;
+        let oldU1 = cube.U1;
         cube.U1 = cube.U3;
         cube.U3 = cube.U4;
         cube.U4 = cube.U2;
         cube.U2 = oldU1;
         }
         function UP() {
-          var oldF1 = cube.F1;
-          var oldF2 = cube.F2;
+          let oldF1 = cube.F1;
+          let oldF2 = cube.F2;
           cube.F1 = cube.L1;
           cube.F2 = cube.L2;
           cube.L1 = cube.B4;
@@ -103,15 +103,15 @@ var cube = {              U1:"B1",U2:"B2",
           cube.B3 = cube.R2;
           cube.R1 = oldF1;
           cube.R2 = oldF2;
-          var oldU1 = cube.U1;
+          let oldU1 = cube.U1;
           cube.U1 = cube.U2;
           cube.U2 = cube.U4;
           cube.U4 = cube.U3;
           cube.U3 = oldU1;
           }
         function D() {
-          var oldF3 = cube.F3;
-          var oldF4 = cube.F4;
+          let oldF3 = cube.F3;
+          let oldF4 = cube.F4;
           cube.F3 = cube.L3;
           cube.F4 = cube.L4;
           cube.L3 = cube.B2;
@@ -120,15 +120,15 @@ var cube = {              U1:"B1",U2:"B2",
           cube.B1 = cube.R4;
           cube.R3 = oldF3;
           cube.R4 = oldF4;
-          var oldD1 = cube.D1;
+          let oldD1 = cube.D1;
           cube.D1 = cube.D3;
           cube.D3 = cube.D4;
           cube.D4 = cube.D2;
           cube.D2 = oldD1;
           }
         function DP() {
-          var oldF3 = cube.F3;
-          var oldF4 = cube.F4;
+          let oldF3 = cube.F3;
+          let oldF4 = cube.F4;
           cube.F3 = cube.R3;
           cube.F4 = cube.R4;
           cube.R3 = cube.B2;
@@ -137,12 +137,29 @@ var cube = {              U1:"B1",U2:"B2",
           cube.B1 = cube.L4;
           cube.L3 = oldF3;
           cube.L4 = oldF4;
-          var oldD1 = cube.D1;
+          let oldD1 = cube.D1;
           cube.D1 = cube.D2;
           cube.D2 = cube.D4;
           cube.D4 = cube.D3;
           cube.D3 = oldD1;
-          }            
+          }
+          function roUp() {
+            R();
+            LP();
+          }
+          function roDown() {
+            L();
+            RP();
+          }
+          function roLeft() {
+            U();
+            DP();
+          }
+          function roRight() {
+            D();
+            UP();
+          }          
+
           function RURPUP() {
             R();
             U();
