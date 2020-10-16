@@ -7,6 +7,7 @@ var cube = {              U1:"B1",U2:"B2",
             B1:"Y1",B2:"Y2",
             B3:"Y3",B4:"Y4"
         };
+const solvedCube= JSON.parse(JSON.stringify(cube));
 var moveStack=new Array();      
   function R() {
             let oldF2 = cube.F2;
@@ -192,16 +193,8 @@ var moveStack=new Array();
             L();
           }
           function resetCube(){
-            cube = {              U1:"B1",U2:"B2",
-                          U3:"B3",U4:"B4",
-            L1:"O1",L2:"O2",F1:"W1",F2:"W2",R1:"R1",R2:"R2",
-            L3:"O3",L4:"O4",F3:"W3",F4:"W4",R3:"R3",R4:"R4",
-                          D1:"G1",D2:"G2",
-                          D3:"G3",D4:"G4",
-            B1:"Y1",B2:"Y2",
-            B3:"Y3",B4:"Y4"
-        };
-          }                                                                                
+            cube = JSON.parse(JSON.stringify(solvedCube));
+          }                                                                            
   function drawCube() {
     document.getElementById("U1").innerHTML ="<div id=" + cube.U1 +"C>" + cube.U1 + "</div>";
     document.getElementById("U2").innerHTML ="<div id=" + cube.U2 +"C>" + cube.U2 + "</div>";
