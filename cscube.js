@@ -1,11 +1,11 @@
-var cube = {              U1:"B1",U2:"B2",
-                          U3:"B3",U4:"B4",
-            L1:"O1",L2:"O2",F1:"W1",F2:"W2",R1:"R1",R2:"R2",
-            L3:"O3",L4:"O4",F3:"W3",F4:"W4",R3:"R3",R4:"R4",
-                          D1:"G1",D2:"G2",
-                          D3:"G3",D4:"G4",
-            B1:"Y1",B2:"Y2",
-            B3:"Y3",B4:"Y4"
+var cube = {              U1:"W1",U2:"W2",
+                          U3:"W3",U4:"W4",
+            L1:"O1",L2:"O2",F1:"G1",F2:"G2",R1:"R1",R2:"R2",
+            L3:"O3",L4:"O4",F3:"G3",F4:"G4",R3:"R3",R4:"R4",
+                          D1:"Y1",D2:"Y2",
+                          D3:"Y3",D4:"Y4",
+            B1:"B1",B2:"B2",
+            B3:"B3",B4:"B4"
         };
 const solvedCube= JSON.parse(JSON.stringify(cube));
 var moveStack=new Array();      
