@@ -227,6 +227,38 @@ var moveStack=new Array();
     document.getElementById("D2").innerHTML ="<div id=" + cube.D2 +"C>" + cube.D2 + "</div>";
     document.getElementById("D3").innerHTML ="<div id=" + cube.D3 +"C>" + cube.D3 + "</div>";
     document.getElementById("D4").innerHTML ="<div id=" + cube.D4 +"C>" + cube.D4 + "</div>";
-    document.getElementById("moveStack").innerHTML ="MoveList:"+ moveStack.toString() + ".";
+    document.getElementById("moveStack").innerHTML ="MoveList:"+ moveStack.toString();
   }
- 
+ function runInput() {
+
+  let moves = document.getElementById("MovesToApply").value.split(",");
+  for (const element of moves) {
+    switch(element){
+      case "R":
+        R();
+        break;
+      case "RP":
+        RP();
+        break;
+      case "L":
+        L();
+        break;
+      case "LP":
+        LP();
+        break;
+      case "U":
+        U();
+        break;
+      case "UP":
+        UP();
+        break;
+      case "D":
+        D();
+        break;
+      case "DP":
+        DP();
+        break;                                    
+    }
+
+  }
+ }
