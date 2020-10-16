@@ -254,4 +254,41 @@ var moveStack=new Array();
     }
 
   }
+}
+
+function solveCube(){
+  inBottom("W1");
  }
+
+ function inBottom(sticker)
+ {
+   return inGOY() || inGRY();
+ }
+ function inGOY(faceName) {
+  switch(faceName){
+    case cube.L4:
+      return true;
+      break;
+    case cube.F3:
+      return true;
+      break;
+    case cube.D1:
+      return true;
+      break;                         
+  }
+  return false;
+ }
+ function inGRY(faceName) {
+  switch(faceName){
+    case cube.F4:
+      return true;
+      break;
+    case cube.D2:
+      return true;
+      break;
+    case cube.R3:
+      return true;
+      break;                         
+  }
+  return false;
+ }   
