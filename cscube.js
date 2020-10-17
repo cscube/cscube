@@ -257,12 +257,34 @@ var moveStack=new Array();
 }
 
 function solveCube(){
-  inBottom("W1");
+  solveW1();
+ }
+ function solveW1()
+ {
+   let label = "W1"
+   //if not in bottom, flip cube
+  if(!inBottom(label))
+  {
+    roUp();
+    roUp();
+  }
+  //if not in GOY, rotate right
+  let maxRotate = 3
+  while(!inGOY(label) && maxRotate >0)
+  {
+    roRight();
+  }
+  //if W1 not in D1 then LPUPLU until it is
+  let maxLHA = 4
+  while(!(cube.D1==label) && maxLHA >0)
+  {
+    LPUPLU();
+  }  
  }
 
  function inBottom(sticker)
  {
-   return inGOY() || inGRY();
+   return inGOY(sticker) || inGRY(sticker) || inBOY(sticker)|| inBRY(sticker);
  }
  function inGOY(faceName) {
   switch(faceName){
@@ -289,6 +311,35 @@ function solveCube(){
     case cube.R3:
       return true;
       break;                         
-  }
+  }  
   return false;
- }   
+ }
+ function inBOY(faceName) {
+  switch(faceName){
+    case cube.B1:
+      return true;
+      break;
+    case cube.L3:
+      return true;
+      break;
+    case cube.D3:
+      return true;
+      break;                         
+  }  
+  return false;
+ }
+ function inBRY(faceName) {
+  switch(faceName){
+    case cube.B2:
+      return true;
+      break;
+    case cube.R4:
+      return true;
+      break;
+    case cube.D4:
+      return true;
+      break;                         
+  }  
+  return false;
+ }  
+    
