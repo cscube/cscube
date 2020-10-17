@@ -257,11 +257,11 @@ var moveStack=new Array();
 }
 
 function solveCube(){
-  solveW1();
+  if(cube.D1 != "W1")(solveW1("W1"));
+  if(cube.D2 != "W2")(solveW2("W2"));
  }
- function solveW1()
+ function solveW1(label)
  {
-   let label = "W1"
    //if not in bottom, flip cube
   if(!inBottom(label))
   {
@@ -273,21 +273,27 @@ function solveCube(){
   while(!inGOY(label) && maxRotate >0)
   {
     roRight();
+    maxRotate--;
   }
   //if W1 not in D1 then LPUPLU until it is
   let maxLHA = 4
   while(!(cube.D1==label) && maxLHA >0)
   {
     LPUPLU();
+    maxLHA--;
   }  
+ }
+ function solveW2(label)
+ {
+ 
  }
 
  function inBottom(sticker)
  {
    return inGOY(sticker) || inGRY(sticker) || inBOY(sticker)|| inBRY(sticker);
  }
- function inGOY(faceName) {
-  switch(faceName){
+ function inGOY(label) {
+  switch(label){
     case cube.L4:
       return true;
       break;
@@ -300,8 +306,8 @@ function solveCube(){
   }
   return false;
  }
- function inGRY(faceName) {
-  switch(faceName){
+ function inGRY(label) {
+  switch(label){
     case cube.F4:
       return true;
       break;
@@ -314,8 +320,8 @@ function solveCube(){
   }  
   return false;
  }
- function inBOY(faceName) {
-  switch(faceName){
+ function inBOY(label) {
+  switch(label){
     case cube.B1:
       return true;
       break;
@@ -328,8 +334,8 @@ function solveCube(){
   }  
   return false;
  }
- function inBRY(faceName) {
-  switch(faceName){
+ function inBRY(label) {
+  switch(label){
     case cube.B2:
       return true;
       break;
