@@ -257,10 +257,10 @@ var moveStack=new Array();
 }
 
 function solveCube(){
-  if(cube.D1 != "W1")(solveW1("W1"));
-  if(cube.D2 != "W2")(solveW2("W2"));
+  if(cube.D1 != "W1")(solveD1("W1"));
+  if(cube.D2 != "W2")(solveD2("W2"));
  }
- function solveW1(label)
+ function solveD1(label)
  {
    //if not in bottom, flip cube
   if(!inBottom(label))
@@ -283,9 +283,11 @@ function solveCube(){
     maxLHA--;
   }  
  }
- function solveW2(label)
+ function solveD2(label)
  {
- 
+  if(inBOY(label)){L();U();LP();}
+  if(inBRY(label)){R();R();}
+  if(inGRY(label)){RURPUP();} 
  }
 
  function inBottom(sticker)
