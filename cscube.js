@@ -287,7 +287,20 @@ function solveCube(){
  {
   if(inBOY(label)){L();U();LP();}
   if(inBRY(label)){R();R();}
-  if(inGRY(label)){RURPUP();} 
+  //no need to check for inGRY because it is handled later
+  
+  let roCount=3;
+  while (roCount >0 && !inGRW(label))
+  {
+    U();
+    roCount--;
+  }
+  let rotateCount=5;
+  while (rotateCount >0 && cube.D2!==label)
+  {
+    RURPUP();
+    rotateCount--;
+  }  
  }
 
  function inBottom(sticker)
@@ -345,6 +358,20 @@ function solveCube(){
       return true;
       break;
     case cube.D4:
+      return true;
+      break;                         
+  }  
+  return false;
+ }
+ function inGRW(label) {
+  switch(label){
+    case cube.F2:
+      return true;
+      break;
+    case cube.R1:
+      return true;
+      break;
+    case cube.U4:
       return true;
       break;                         
   }  
