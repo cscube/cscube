@@ -260,6 +260,7 @@ function solveCube(){
   if(cube.D1 != "W1")(solveD1("W1"));
   if(cube.D2 != "W2")(solveD2("W2"));
   if(cube.D4 != "W4")(solveD4("W4"));
+  if(cube.D3 != "W3")(solveD3("W3"));
  }
  function solveD1(label)
  {
@@ -324,6 +325,36 @@ function solveD4(label)
       rotateCount--;
     } 
   }
+  roRight();
+
+}
+function solveD3(label)
+{
+  roLeft();
+  roLeft();
+  //this can be refactored, since it is almost the same code for D2,D3,D4
+  if(!inBottom(label) && !inGRW(label))
+  {
+    let roCount=3;
+    while (roCount >0 && !inGRW(label))
+    {
+      U();
+      roCount--;
+    }    
+  }
+  if(inGRY(label) || inGRW(label))
+  {
+    let rotateCount=5;
+    while (rotateCount >0 && cube.D2!==label)
+    {
+      RURPUP();
+      rotateCount--;
+    } 
+  }
+  roRight();
+  roRight();
+
+
 }
  function inBottom(sticker)
  {
