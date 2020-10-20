@@ -222,10 +222,14 @@ var moveStack=new Array();
     document.getElementById("D4").innerHTML ="<div id=" + cube.D4 +"C>" + cube.D4 + "</div>";
     document.getElementById("moveStack").innerHTML ="MoveList:"+ moveStack.toString();
   }
- function runInput() {
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }  
+ async function runInput() {
 
   let moves = document.getElementById("MovesToApply").value.split(",");
   for (const element of moves) {
+    await sleep(200);
     switch(element){
       case "R":
         R();
@@ -252,6 +256,7 @@ var moveStack=new Array();
         DP();
         break;                                    
     }
+    drawCube();
 
   }
 }
@@ -261,6 +266,10 @@ function solveCube(){
   if(cube.D2 != "W2")(solveD2("W2"));
   if(cube.D4 != "W4")(solveD4("W4"));
   if(cube.D3 != "W3")(solveD3("W3"));
+  if(!(cube.U1 =="Y1" && cube.U2 =="Y2" && cube.U3 =="Y3" && cube.U4 =="Y4"))
+  {
+    
+  }
  }
  function solveD1(label)
  {
