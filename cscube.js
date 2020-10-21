@@ -228,8 +228,10 @@ var moveStack=new Array();
  async function runInput() {
 
   let moves = document.getElementById("MovesToApply").value.split(",");
+  let slowMode = false;
+
   for (const element of moves) {
-    await sleep(200);
+    if(slowMode == true){await sleep(200);}    
     switch(element){
       case "R":
         R();
@@ -254,7 +256,10 @@ var moveStack=new Array();
         break;
       case "DP":
         DP();
-        break;                                    
+        break;
+        case "SLOW":
+          slowMode = true;
+          break;                                            
     }
     drawCube();
 
