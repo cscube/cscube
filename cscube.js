@@ -231,7 +231,7 @@ var moveStack=new Array();
   let slowMode = false;
 
   for (const element of moves) {
-    if(slowMode == true){await sleep(200);}    
+    if(slowMode == true){await sleep(600);}    
     switch(element){
       case "R":
         R();
@@ -273,8 +273,18 @@ function solveCube(){
   if(cube.D3 != "W3")(solveD3("W3"));
   if(!(cube.U1 =="Y1" && cube.U2 =="Y2" && cube.U3 =="Y3" && cube.U4 =="Y4"))
   {
-    
+    //count matches, if = 1 then swap corners and solve, otherwise shift right and swap
+    countCorners();
   }
+ }
+ function countCorners(){
+   let count= 0;
+  if(!(cube.U1 =="Y1" || cube.L1 =="Y1" || cube.B3 =="Y1" ))
+  {
+    count++;
+  }
+  return count;
+
  }
  function solveD1(label)
  {
@@ -443,5 +453,47 @@ function solveD3(label)
       break;                         
   }  
   return false;
- }  
+ }
+ function inBOW(label) {
+  switch(label){
+    case cube.U1:
+      return true;
+      break;
+    case cube.L1:
+      return true;
+      break;
+    case cube.B3:
+      return true;
+      break;                         
+  }  
+  return false;
+ }
+ function inBRW(label) {
+  switch(label){
+    case cube.U2:
+      return true;
+      break;
+    case cube.R2:
+      return true;
+      break;
+    case cube.B4:
+      return true;
+      break;                         
+  }  
+  return false;
+ }
+ function inGOW(label) {
+  switch(label){
+    case cube.F1:
+      return true;
+      break;
+    case cube.L2:
+      return true;
+      break;
+    case cube.U3:
+      return true;
+      break;                         
+  }  
+  return false;
+ }    
     
