@@ -281,6 +281,23 @@ function solveCube(){
  function alignLabels(){
   roUp();
   roUp();
+  let dCount=4;
+  while(dCount >0)
+  {
+    dCount--;
+    alignLabelD2()
+    D();
+  }
+ }
+ function alignLabelD2(){
+  if(!cube.D2.startsWith("Y")){
+    let roLabelCount = 6;
+    while(roLabelCount >0  && !cube.D2.startsWith("Y"))
+    {
+      roLabelCount--;
+      RURPUP();
+    }
+  }
  }
  function alignCorners(){
   let loopCount =10; 
