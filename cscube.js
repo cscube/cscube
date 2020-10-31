@@ -272,17 +272,52 @@ function solveCube(){
   if(cube.D4 != "W4")(solveD4("W4"));
   if(cube.D3 != "W3")(solveD3("W3"));
   if(!(cube.U1 =="Y1" && cube.U2 =="Y2" && cube.U3 =="Y3" && cube.U4 =="Y4"))
+  {solveTop();}
+ }
+ function solveTop(){
+   alignCorners();
+   alignLabels();
+ }
+ function alignLabels(){
+  roUp();
+  roUp();
+ }
+ function alignCorners(){
+  let loopCount =10; 
+  while(countCorners()!=4 && loopCount >0)
   {
-    //count matches, if = 1 then swap corners and solve, otherwise shift right and swap
-    countCorners();
+    loopCount--;
+    switch (countCorners()) {
+      case 1:
+       rotateY4IntoU3();
+       URUPLPURPUPLP();  
+        break;
+     case 2:
+       U();
+       U();
+       URUPLPURPUPLP();      
+       break;         
+     default:
+       break;
+    }
+   rotateY4IntoU3();
+   countCorners();
   }
+ }
+ function rotateY4IntoU3()
+ {
+   let maxRotate=4;
+   while(maxRotate > 0 && !inGRW("Y4")){
+    maxRotate--;
+    U();
+    }   
  }
  function countCorners(){
    let count= 0;
-  if(!(cube.U1 =="Y1" || cube.L1 =="Y1" || cube.B3 =="Y1" ))
-  {
-    count++;
-  }
+  if(inGRW("Y4")){count++;}
+  if(inGOW("Y3")){count++;}
+  if(inBOW("Y1")){count++;}
+  if(inBRW("Y2")){count++;}
   return count;
 
  }
